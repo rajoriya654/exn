@@ -1,0 +1,71 @@
+// ==========================================================================
+//  GLOBAL Mixins
+// ==========================================================================
+
+
+
+ // * Convert font-size from px to rem
+ // *
+ // * @param $size - the value in pixel you want to convert
+ // *
+ // * e.g. p {@include fontSize(12px);}
+ // * 
+
+
+@mixin font-rem($font-size, $line-height: 0) {
+  font-size: ($font-size / $baseFontSize) * 1rem;
+  @if ($line-height > 0) {
+    line-height: ($line-height / $baseFontSize) * 1rem;
+  }
+}
+
+ // * SASS color map function
+ // *
+ // * using the function to get an non-map color
+ // *
+ // * e.g. body {background-color: color(background)};
+ // * 
+ // * using the function to get a nested map color
+ // *
+ // * h1{color: color(primary, base);}
+ // *
+ 
+// retrieve color from $colors map ie. `color(base, primary)`
+
+@function color($color-name, $color-variant:null) {
+  // color variant is optional
+  @if ($color-variant != null) {
+    // map inception
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
+
+// Media query mixin
+@mixin bp($query) {
+  @if $query == desktop-lg {
+    @media (min-width: 1800px) { @content; }
+  }
+  @else if $query == standard-desktop {
+     @media (min-width: 992px) and (max-width: 1280px) { @content; }
+  }
+  @else if $query == tablet-md {
+    @media (min-width: 992px) { @content; }
+  }
+  @else if $query == tablet-sm {
+    @media (max-width: 991px) { @content; }
+  }
+  @else if $query == tablet-strict {
+    @media (min-width: 768px) and (max-width: 991px)  { @content; }
+  }
+  @else if $query == mobile {
+    @media (max-width: 767px)  { @content; }
+  }
+  @else if $query == xs {
+    @media (max-width: 320px)  { @content; }
+  }
+  @else if $query == hover {
+    @media (hover: hover)  { &:hover{ @content } ; }
+  }
+}

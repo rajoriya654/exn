@@ -1,0 +1,127 @@
+/* ==========================================================================
+  Base Typography Styles
+  ========================================================================== */
+
+
+/* ==========================================================================
+   Base Type
+   ========================================================================== */
+*{
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:focus,&:active,&:hover{
+      &::-moz-focus-inner {
+        border: 0;
+      }
+      outline: 0;
+    }
+}
+
+html {
+  @include font-rem($htmlFontSize);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html,body{
+  text-rendering: optimizeLegibility;
+  // text-rendering: geometricPrecision;
+}
+
+body {
+  @include font-rem($htmlFontSize);
+  line-height: $baseLineHeight;
+  color: $baseTextColor;
+  background-color: color(background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+select,
+textarea {
+  font-family: $baseFontFamily;
+}
+
+/* ==========================================================================
+   Headings and paragraph
+   ========================================================================== */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-style: normal;
+  @extend .font-weight-regular;
+}
+
+h1, .h1 {
+   @include font-rem(64px,64px);
+   @include bp(tablet-sm){
+      @include font-rem(31px,37px);
+   }
+}
+
+h2,.h2 {
+    @include font-rem(38px,46px);
+   @include bp(tablet-sm){
+      @include font-rem(20px,24px);
+   }
+}
+
+h3,.h3 {
+   @include font-rem(25px,30px);
+   @include bp(tablet-sm){
+      @include font-rem(16px,20px);
+   }
+}
+
+h4, .h4 {
+   @include font-rem(20px,22px);
+   @include bp(tablet-sm){
+      @include font-rem(14px,16px);
+   }
+}
+
+h5, .h5 {
+   @include font-rem(14px,16px);
+   @include bp(tablet-sm){
+      @include font-rem(11px,14px);
+   }
+}
+
+h6, .h6 {
+    @include font-rem(10px,14px);
+   @include bp(tablet-sm){
+      @include font-rem(9px,12px);
+   }
+}
+
+
+h1,h2,h3,h4,h5,h6,p,a,span,li{
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  color: color(heading);
+  text-decoration: none;
+  transition: all 0.35s ease;
+  &:hover{    
+    text-decoration: underline;
+  }
+}
+
+button,button.btn{
+  &:focus{
+    outline: 0;
+    box-shadow: none;
+  }
+}

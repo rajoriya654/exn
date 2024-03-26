@@ -1,0 +1,178 @@
+// Helper classes
+
+
+// Primary/Secondary classes
+
+.text-primary{
+	color: color(primary,base) !important;
+}
+
+.text-secondary{
+	color: color(secondary,base) !important;
+}
+
+
+.color-white{
+	color: color(white);
+}
+
+
+.text-danger{
+	color: color(error) !important;
+}
+
+.text-white{
+	color: color(white);
+}
+
+
+// Shades of grey
+
+
+.sub-font{
+	font-family: $baseFontFamily
+}
+
+
+// Text decoration/none
+
+.text-underline{
+	text-decoration: underline !important;
+}
+
+.underline-none{
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+
+// Font weight classes
+
+.font-weight{
+	&-light{
+		font-weight: 300 !important;
+	}
+	&-regular{
+		font-weight: 400 !important;
+	}
+	&-medium{
+		font-weight: 500 !important;
+	}
+	&-semi-bold{
+		font-weight: 600 !important;
+	}
+	&-bold{
+		font-weight: 700 !important;
+	}
+	&-extra-bold{
+		font-weight: 900 !important;
+	}
+}
+
+.min-height{
+	min-height: 100vh;
+}
+
+.no-border{
+	border: 0 !important;
+}
+
+// Global helper classes
+
+// Pointer cursor
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
+.cursor-inherit{
+	cursor: inherit;
+}
+
+.cursor-default{
+	cursor: default;
+}
+
+// Ellipsis classes
+
+.ellipsis{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ellipsis-2{
+	display: -webkit-box;
+    height: 43px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+// Overflow class
+// Only to be used for body/html
+.overflow-hidden{
+	overflow: hidden;
+	padding-right: 15px;
+}
+
+.disabled{
+	pointer-events: none;
+}
+
+.color-inherit{
+	color: inherit;
+	&:hover,&:focus,&:active{
+		color: inherit;
+	}
+}
+
+.object-cover{
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+
+.object-contain{
+	object-fit: contain;
+	font-family: 'object-fit: contain;';
+}
+
+.freeze{
+	overflow: hidden;
+	&.mac{
+		@media (max-width: 1024px){
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+	}
+}
+
+// Flex full helper
+.flex-1{
+	flex: 1;
+}
+
+
+// Reset line-height
+.lh-normal{
+	line-height: normal;
+}
+
+
+// White space pre line
+.white-space-pre-line{
+	white-space: pre-line;
+}
+
+
+.content-visibility{
+	// For faster page rendering and performance - Only supported in chrome
+	content-visibility: auto;
+	contain-intrinsic-size: 1000px;
+}
